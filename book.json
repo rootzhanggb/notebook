@@ -1,0 +1,28 @@
+{
+    "title": "zgb Handbook",
+    "description": "张广彬",
+    "language": "zh-hans",
+    "author": "zgb",
+    "links": {
+        "sidebar": {
+            "zgb": "https://rootzhanggb.github.io"
+        }
+    },
+    "plugins": [
+        "github",
+        "editlink",
+        "theme-default"
+    ],
+    "pluginsConfig": {
+        "theme-default": {
+            "showLevel": true
+        },
+        "github": {
+            "url": "https://github.com/rootzhanggb/rootzhanggb.github.io"
+        },
+        "editlink": {
+            "base": "https://github.com/rootzhanggb/rootzhanggb.github.io/blob/master/",
+            "label": "编辑本页"
+        }
+    }
+}
