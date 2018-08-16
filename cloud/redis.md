@@ -12,8 +12,8 @@ docker run --name redis-alone -d -p 6379:6379 192.168.14.66/public/redis:4.0.9
 kind: ConfigMap
 apiVersion: v1
 metadata:
-  name: ykfw-redis-configmap
-  namespace: ykfw-public
+  name: zkb-redis-configmap
+  namespace: zkb-test
 data:
   redis.conf: |
     #bind 10.100.11.171
@@ -82,7 +82,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: redis-service
-  namespace: ykfw-public
+  namespace: zkb-test
   labels:
     app: redis-alone
 spec:
@@ -98,7 +98,7 @@ kind: PersistentVolumeClaim
 apiVersion: v1
 metadata:
   name: redis-lv-claim
-  namespace: ykfw-public
+  namespace: zkb-test
   labels:
     app: redis-alone
   annotations:
@@ -114,7 +114,7 @@ apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
   name: redis-alone
-  namespace: ykfw-public
+  namespace: zkb-test
 spec:
   replicas: 1
   template:
@@ -154,7 +154,7 @@ spec:
       volumes:
       - name: config
         configMap: 
-            name: ykfw-redis-configmap
+            name: zkb-redis-configmap
             items: 
             - key: redis.conf
               path: redis.conf
